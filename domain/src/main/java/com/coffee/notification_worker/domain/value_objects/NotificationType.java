@@ -1,9 +1,9 @@
 package com.coffee.notification_worker.domain.value_objects;
 
 import com.coffee.notification_worker.domain.exceptions.EmptyNotificationTypeException;
-import com.coffee.notification_worker.domain.types.SendType;
+import com.coffee.notification_worker.domain.types.SendingType;
 
-public record NotificationType(SendType value) {
+public record NotificationType(SendingType value) {
 
     public NotificationType {
         if (value == null) {

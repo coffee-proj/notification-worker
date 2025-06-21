@@ -1,5 +1,5 @@
 package com.coffee.notification_worker.domain.types;
 
-public enum SendType {
+public enum SendingType {
     EMAIL, SMS, PUSH
 }

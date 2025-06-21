@@ -20,4 +20,11 @@ public class Notification extends AggregateRoot {
         this.content = content;
     }
 
+    public NotificationAddress getAddress() {
+        return address;
+    }
+
+    public NotificationContent getContent() {
+        return content;
+    }
 }
