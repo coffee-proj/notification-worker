@@ -1,4 +1,4 @@
-package com.coffee.notification_worker.application.sending.abstractions.services;
+package com.coffee.notification_worker.application.notification.abstractions.services;
 
 import com.coffee.notification_worker.domain.entities.Notification;
 
