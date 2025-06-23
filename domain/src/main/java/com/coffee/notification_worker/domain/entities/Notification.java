@@ -1,10 +1,7 @@
 package com.coffee.notification_worker.domain.entities;
 
 import com.coffee.notification_worker.domain.abstractions.entities.AggregateRoot;
-import com.coffee.notification_worker.domain.value_objects.NotificationAddress;
-import com.coffee.notification_worker.domain.value_objects.NotificationContent;
-import com.coffee.notification_worker.domain.value_objects.NotificationId;
-import com.coffee.notification_worker.domain.value_objects.NotificationType;
+import com.coffee.notification_worker.domain.value_objects.*;
 
 public class Notification extends AggregateRoot {
 
@@ -12,12 +9,14 @@ public class Notification extends AggregateRoot {
     private final NotificationAddress address;
     private final NotificationType type;
     private final NotificationContent content;
+    private final NotificationMetadata metadata;
 
-    public Notification(NotificationId id, NotificationAddress address, NotificationType type, NotificationContent content) {
+    public Notification(NotificationId id, NotificationAddress address, NotificationType type, NotificationContent content, NotificationMetadata metadata) {
         this.id = id;
         this.address = address;
         this.type = type;
         this.content = content;
+        this.metadata = metadata;
     }
 
     public NotificationId getId() {
@@ -34,5 +33,9 @@ public class Notification extends AggregateRoot {
 
     public NotificationContent getContent() {
         return content;
+    }
+
+    public NotificationMetadata getMetadata() {
+        return metadata;
     }
 }

@@ -6,13 +6,11 @@ import com.coffee.notification_worker.application.notification.services.PushSend
 import com.coffee.notification_worker.application.notification.services.SmsSender;
 import com.coffee.notification_worker.domain.entities.Notification;
 import com.coffee.notification_worker.domain.types.SendingType;
-import com.coffee.notification_worker.domain.value_objects.NotificationAddress;
-import com.coffee.notification_worker.domain.value_objects.NotificationContent;
-import com.coffee.notification_worker.domain.value_objects.NotificationId;
-import com.coffee.notification_worker.domain.value_objects.NotificationType;
+import com.coffee.notification_worker.domain.value_objects.*;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import java.util.Hashtable;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -26,7 +24,8 @@ class SendUseCaseTest {
                 new NotificationId(UUID.randomUUID()),
                 new NotificationAddress("test@example.com"),
                 new NotificationType(SendingType.EMAIL),
-                new NotificationContent("test")
+                new NotificationContent("test"),
+                new NotificationMetadata(new Hashtable<>())
         );
 
         var emailSender = Mockito.mock(EmailSender.class);
@@ -51,7 +50,8 @@ class SendUseCaseTest {
                 new NotificationId(UUID.randomUUID()),
                 new NotificationAddress("test@example.com"),
                 new NotificationType(SendingType.PUSH),
-                new NotificationContent("test")
+                new NotificationContent("test"),
+                new NotificationMetadata(new Hashtable<>())
         );
 
         var emailSender = Mockito.mock(EmailSender.class);
@@ -76,7 +76,8 @@ class SendUseCaseTest {
                 new NotificationId(UUID.randomUUID()),
                 new NotificationAddress("test@example.com"),
                 new NotificationType(SendingType.SMS),
-                new NotificationContent("test")
+                new NotificationContent("test"),
+                new NotificationMetadata(new Hashtable<>())
         );
 
         var emailSender = Mockito.mock(EmailSender.class);
