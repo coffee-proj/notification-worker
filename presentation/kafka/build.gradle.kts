@@ -12,9 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":application"))
-    implementation(project(":infrastructure"))
+    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.kafka:spring-kafka")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
