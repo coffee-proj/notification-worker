@@ -1,4 +1,6 @@
 plugins {
+    id("org.springframework.boot") version "3.5.3"
+    id("io.spring.dependency-management") version "1.1.7"
     id("java")
 }
 
@@ -13,6 +15,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":application"))
     implementation(project(":infrastructure"))
+    implementation("org.springframework.kafka:spring-kafka")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
 }
