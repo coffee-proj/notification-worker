@@ -1,0 +1,18 @@
+spring:
+  mail:
+    host: "host"
+    username: "username"
+    password: "password"
+    properties:
+      mail:
+        transport:
+          protocol: "smtp"
+        smtp:
+          auth: true
+          port: 100
+          starttls:
+            enable: true
+            required: true
+  data:
+    redis:
+      uri: "uri"
